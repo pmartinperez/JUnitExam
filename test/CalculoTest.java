@@ -18,22 +18,22 @@ import org.junit.Ignore;
  * @author Patripon
  */
 public class CalculoTest {
-    
+
     public CalculoTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -123,11 +123,6 @@ public class CalculoTest {
         int expResult = 12;
         int result = instance.obtenerMCD(num1, num2);
         assertEquals(expResult, result, 0);
-        num1 =42;
-        num2=56;
-        expResult= 14;
-        result = instance.obtenerMCD(num1, num2);
-        assertEquals(expResult, result, 0);     
     }
-    
+
 }
