@@ -45,11 +45,11 @@ public class CalculoTest {
     @Test
     public void testSetNumero1() {
         System.out.println("setNumero1");
-        int numero = 0;
+        int numero = -1;
         Calculo instance = new Calculo();
         instance.setNumero1(numero);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        String mensaje = instance.getMensajeResultado();
+        System.out.println("mensaje:" + mensaje);
     }
 
     /**
@@ -69,16 +69,30 @@ public class CalculoTest {
     /**
      * Test of getMensajeResultado method, of class Calculo.
      */
-    @Ignore
     @Test
     public void testGetMensajeResultado() {
-        System.out.println("getMensajeResultado");
         Calculo instance = new Calculo();
-        String expResult = "";
-        String result = instance.getMensajeResultado();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        instance.setNumero1(-1);
+        System.out.println("Test mensaje num1 negativo:" + instance.getMensajeResultado());
+        instance.setNumero2(-1);
+        System.out.println("Test mensaje num2 negativo:" + instance.getMensajeResultado());
+        int result = instance.obtenerMCD(36, 60);
+        assertEquals(12, result, 0);
+        System.out.println("Test mensaje operacion correcta:" + instance.getMensajeResultado());
+        result = instance.obtenerMCD(0, 0);
+        assertEquals(0, result, 0);
+        System.out.println("Test mensaje operacion invalida:" + instance.getMensajeResultado());
+
+    }
+
+    @Ignore
+    @Test(expected = AssertionError.class)
+    public void testmensaje() {
+        Calculo instance = new Calculo();
+        System.out.println("salta excepcion");
+        int result = instance.obtenerMCD(0, 0);
+        assertEquals(0, result, 0);
+        System.out.println("eror:" + instance.getMensajeResultado());
     }
 
     /**
